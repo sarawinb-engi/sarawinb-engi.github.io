@@ -1,8 +1,17 @@
-window.addEventListener("scroll", function() {
-    const navbar = this.document.getElementById("navbar");
-    if (this.window.scrollY > 50) {
-        navbar.classList.add("scrolled"); 
-    } else {
-        navbar.classList.remove("scrolled")
-    }
+document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll(".section");
+
+    links.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            let targetId = this.getAttribute("href").substring(1);
+            
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+
+            document.getElementById(targetId).classList.add("active");
+        });
+    });
 });

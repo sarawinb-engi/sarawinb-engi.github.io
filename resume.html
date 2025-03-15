@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        :root {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --primary-color: #ffffff;
+            --accent-color: #888888;
+            --button-bg: #ffffff;
+            --button-text: #000000;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px; 
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 18px; 
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/resume.html">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const links = document.querySelectorAll(".nav-link");
+            const sections = document.querySelectorAll(".section"); 
+
+            links.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    let targetId = this.getAttribute("href").substring(1);
+
+                    sections.forEach(sections => {
+                        section.classList.remove("active");
+                    });
+
+                    document.getElementById(targetId).classList.add("active")
+                });
+            });
+        });
+    </script>
+</body>
+</html>
