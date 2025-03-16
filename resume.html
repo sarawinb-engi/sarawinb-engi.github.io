@@ -4,78 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-        :root {
-            --bg-color: #121212;
-            --text-color: #ffffff;
-            --primary-color: #ffffff;
-            --accent-color: #888888;
-            --button-bg: #ffffff;
-            --button-text: #000000;
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background: rgba(0, 0, 0, 0.8);
+            background: #222;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .resume-container {
+            max-width: 800px;
+            background: white;
+            margin: 20px auto;
             padding: 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px; 
+        .resume-header {
+            text-align: center;
+        }
+        .resume-header h1 {
+            margin-bottom: 5px;
+        }
+        .resume-header button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .resume-header button:hover {
+            background: #0056b3;
+        }
+        .resume-content h2 {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            margin-top: 20px;
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-size: 18px; 
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="/resume.html">Resume</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h2>Resume</h2>
     </header>
     
+    <section id="resume" class="resume-container">
+        <div class="resume-header">
+            <h1>Sarawin</h1>
+            <p>An experienced Electrical Engineer & Software Developer.</p>
+            <button id="download-pdf">Download as PDF</button>
+        </div>
+        <div class="resume-content" id="resume-content">
+            <h2>Behavior</h2>
+            <p>Deep engagement, outcome-focused curiosity, and prestige-less collaboration.</p>
+            
+            <h2>Strengths</h2>
+            <p>Flexibility in being hands-on, delivering high-quality design, and strategic vision.</p>
+            
+            <h2>Mindset</h2>
+            <p>Passionate about translating user value into experiences that unlock business value.</p>
+        </div>
+    </section>
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            const links = document.querySelectorAll(".nav-link");
-            const sections = document.querySelectorAll(".section"); 
-
-            links.forEach(link => {
-                link.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    let targetId = this.getAttribute("href").substring(1);
-
-                    sections.forEach(sections => {
-                        section.classList.remove("active");
-                    });
-
-                    document.getElementById(targetId).classList.add("active")
-                });
-            });
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            const element = document.getElementById('resume-content');
+            html2pdf().from(element).save('Sarawin_Resume.pdf');
         });
     </script>
 </body>
