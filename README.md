@@ -10,35 +10,13 @@ Static portfolio for Manufacturing Engineering, industrial automation, and softw
 - `images/profile.jpg`: existing portrait, reused without modification.
 - `resume-sarawinb.pdf`: existing CV; its contents have not been updated in this redesign. Replace it with an updated PDF when ready. Both CV buttons use this file.
 
-### เติมรายละเอียดผลงาน
 
-ค้นหา `PROJECT DETAILS` ใน `index.html` ใต้การ์ดแต่ละผลงาน แล้วเพิ่มข้อมูลที่พร้อมเผยแพร่ เช่น:
 
-```html
-<details class="project-details">
-  <summary>Project details</summary>
-  <dl>
-    <dt>Problem & goal</dt><dd>ใส่ปัญหาและเป้าหมาย</dd>
-    <dt>My contribution</dt><dd>ใส่ส่วนที่คุณรับผิดชอบ</dd>
-    <dt>Technology</dt><dd>ใส่เทคโนโลยีที่ใช้จริง</dd>
-    <dt>Results</dt><dd>ใส่ผลลัพธ์ที่ยืนยันได้</dd>
-  </dl>
-</details>
-```
 
-เพิ่มภาพได้ด้วย `<img src="images/your-project.jpg" alt="คำอธิบายภาพ" loading="lazy">` ไม่ต้องใส่หัวข้อที่ยังไม่มีข้อมูล รูปในสองการ์ดปัจจุบันเป็นแผนผังแนวคิด ไม่ใช่ภาพหน้าจอโปรแกรมจริง ไม่ได้ระบุ protocol, รุ่น PLC หรือผลลัพธ์เชิงตัวเลขที่ยังไม่ได้ยืนยัน
-
-วันที่ของประสบการณ์ก่อนหน้าเว้นไว้ จนกว่าจะมีข้อมูลที่ถูกต้อง อีเมลหลักใช้ `sarawin.bua@gmail.com` ตามข้อความติดต่อในเว็บเดิม และเบอร์โทรใช้ `+66 61 503 6105` ตามที่แสดงเดิม
 
 ## Local preview
 
-From the repository root:
 
-```sh
-python3 -m http.server 8765 --bind 127.0.0.1
-```
-
-Open http://127.0.0.1:8765. No dependency installation or build is required. The root `index.html` remains compatible with the existing GitHub Pages repository layout.
 
 ## 21st.dev design references
 
