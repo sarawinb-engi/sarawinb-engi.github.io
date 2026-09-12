@@ -11,9 +11,6 @@ Static portfolio for Manufacturing Engineering, industrial automation, and softw
 - `resume-sarawinb.pdf`: existing CV; its contents have not been updated in this redesign. Replace it with an updated PDF when ready. Both CV buttons use this file.
 
 
-
-
-
 ## Local preview
 
 
